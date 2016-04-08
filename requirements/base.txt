@@ -22,7 +22,9 @@ django-floppyforms==1.6.1
 django-model-utils==2.4
 
 # Images
-# Pillow==3.1.1
+# Dependencies for Pillow: libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev
+# liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+Pillow==3.1.1
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
