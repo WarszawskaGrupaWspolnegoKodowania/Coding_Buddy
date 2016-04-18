@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
+
+"""Alert User's model."""
+
 from __future__ import unicode_literals
 
 from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
+    """Migration's class."""
 
     dependencies = [
         ('users', '0001_initial'),
@@ -41,7 +46,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='user',
-            name='photo',
-            field=models.ImageField(upload_to='user_image', null=True, verbose_name='My photo', blank=True),
+            name='avatar',
+            field=models.ImageField(upload_to='avatar', null=True, verbose_name='My avatar', blank=True),
         ),
     ]
