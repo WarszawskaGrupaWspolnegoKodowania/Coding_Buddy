@@ -15,8 +15,8 @@ class User(AbstractUser):
     # around the globe.
     my_technology = models.CharField(_("my technology"), null=True, blank=True, max_length=1000)
     about_me = models.TextField(_("about me"), null=True, blank=True)
+    avatar = models.ImageField(upload_to='avatars', null=True)
     my_project_experience = models.URLField(_("URL for project"), null=True, blank=True)
-    avatar = models.ImageField(_("My avatar"), upload_to='avatar', null=True, blank=True)
     phone = models.CharField(_("phone"), max_length=50, null=True, blank=True)
 
     def __str__(self):
