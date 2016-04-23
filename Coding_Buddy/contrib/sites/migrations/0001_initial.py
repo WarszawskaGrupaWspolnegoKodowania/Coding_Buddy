@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-
-"""Create model Site."""
-
 from __future__ import unicode_literals
 
 from django.db import models, migrations
@@ -9,8 +6,6 @@ import django.contrib.sites.models
 
 
 class Migration(migrations.Migration):
-
-    """Migration's class."""
 
     dependencies = [
     ]

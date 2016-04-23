@@ -1,7 +1,3 @@
-# Migrations:
-Coding_Buddy/contrib/sites/migrations
-Coding_Buddy/users/migrations
-
 ### OSX ###
 .DS_Store
 .AppleDouble
