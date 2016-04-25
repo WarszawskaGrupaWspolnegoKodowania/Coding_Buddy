@@ -36,3 +36,15 @@
 [hidden][style="display: block;"] {
   display: block !important;
 }
+
+.imgbox {
+  margin: 15px 0;
+}
+
+.navbar-black {
+  background-color: #373a3c;
+}
+
+img {
+  margin: auto;
+}
