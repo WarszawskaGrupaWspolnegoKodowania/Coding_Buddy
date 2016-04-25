@@ -10,27 +10,27 @@ urlpatterns = [
     url(
         regex=r'^$',
         view=views.UserListView.as_view(),
-        name='user_list'
+        name='list'
     ),
 
     # URL pattern for the UserRedirectView
     url(
         regex=r'^~redirect/$',
         view=views.UserRedirectView.as_view(),
-        name='user_redirect'
+        name='redirect'
     ),
 
     # URL pattern for the UserDetailView
     url(
         regex=r'^(?P<username>[\w.@+-]+)/$',
         view=views.UserDetailView.as_view(),
-        name='user_detail'
+        name='detail'
     ),
 
     # URL pattern for the UserUpdateView
     url(
         regex=r'^~update/$',
         view=views.UserUpdateView.as_view(),
-        name='user_update'
+        name='update'
     ),
 ]
