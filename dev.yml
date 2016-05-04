@@ -19,6 +19,7 @@ services:
       - postgres
     environment:
       - POSTGRES_USER=Coding_Buddy
+      - DATABASE_URL=postgres://Coding_Buddy@postgres:5432/Coding_Buddy
     volumes:
       - .:/app
     ports:
