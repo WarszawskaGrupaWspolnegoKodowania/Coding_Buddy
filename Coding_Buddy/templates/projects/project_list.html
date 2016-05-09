@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Projects</h2>
+
+    <div class="list-group">
+        {% for project in object_list %}
+	  <a>
+            <h4 class="list-group-item-heading">{{ project.name }}</h4>
+          </a>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock content %}
