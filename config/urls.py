@@ -18,6 +18,9 @@ urlpatterns = [
     # User management
     url(r'^users/', include("Coding_Buddy.users.urls", namespace="users")),
     url(r'^accounts/', include('allauth.urls')),
+    
+    # Project
+    url(r'^projects/', include("Coding_Buddy.projects.urls", namespace="projects")),
 
     # Your stuff: custom urls includes go here
 
