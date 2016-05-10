@@ -54,6 +54,7 @@ node_modules/
 
 # virtual environments
 .env
+ENV
 
 # User-uploaded media
 Coding_Buddy/media/
