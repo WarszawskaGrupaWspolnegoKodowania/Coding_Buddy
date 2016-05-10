@@ -13,6 +13,10 @@ from django.core.validators import MaxValueValidator
 from tagging.fields import TagField
 from tagging_autocomplete.models import TagAutocompleteField
 
+# from taggit.managers import TaggableManager
+from tagging.fields import TagField
+from tagging_autocomplete.models import TagAutocompleteField
+
 
 @python_2_unicode_compatible
 class User(AbstractUser):
@@ -34,6 +38,7 @@ class User(AbstractUser):
         verbose_name = 'user'
         verbose_name_plural = 'users'
         ordering = ['username', ]
+
 
 class Skill(models.Model):
 
