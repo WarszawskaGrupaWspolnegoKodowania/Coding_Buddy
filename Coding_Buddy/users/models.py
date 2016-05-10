@@ -3,10 +3,15 @@ from __future__ import unicode_literals, absolute_import
 
 from django.contrib.auth.models import AbstractUser
 from django.core.urlresolvers import reverse
+from django.core.validators import MaxValueValidator
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible, force_bytes
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 from django.core.validators import MaxValueValidator
+
+# from taggit.managers import TaggableManager
+from tagging.fields import TagField
+from tagging_autocomplete.models import TagAutocompleteField
 
 
 @python_2_unicode_compatible
@@ -20,7 +25,7 @@ class User(AbstractUser):
     phone = models.CharField(_("phone"), max_length=50, null=True, blank=True)
 
     def __str__(self):
-        return force_bytes('%s %s'  % (self.username, self.about_me))
+        return '%s %s' % (self.username, self.about_me)
 
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
@@ -30,12 +35,10 @@ class User(AbstractUser):
         verbose_name_plural = 'users'
         ordering = ['username', ]
 
-
 class Skill(models.Model):
 
     programming_lang = models.CharField(_("language"), max_length=255)
-    user = models.ManyToManyField(User)
-    level = models.PositiveSmallIntegerField(_("level"), validators=[MaxValueValidator(5)])
+    skills = models.ManyToManyField(User, through='SkillUser')
 
     def __str__(self):
         return self.programming_lang
@@ -43,4 +46,14 @@ class Skill(models.Model):
     class Meta:
         verbose_name = 'skill'
         verbose_name_plural = 'skills'
-        ordering = ['programming_lang', ]
+
+
+class SkillUser(models.Model):
+
+    user = models.ForeignKey(User)
+    skill = models.ForeignKey(Skill)
+    level = models.PositiveSmallIntegerField(_("level"), validators=[MaxValueValidator(5)])
+
+    class Meta:
+        verbose_name = 'skill_user'
+        verbose_name_plural = 'skills_users'
