@@ -9,7 +9,7 @@ class Project(models.Model):
 
 	skills = models.ManyToManyField(Skill)
 
-	name = models.CharField(_("Name of the project"), null=True, blank=True, max_length=255)
+	name = models.CharField(_("Name of the project"), max_length=255)
 
 	description = models.TextField()
 
