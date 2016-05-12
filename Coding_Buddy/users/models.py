@@ -7,11 +7,11 @@ from django.core.validators import MaxValueValidator
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
+from django.core.validators import MaxValueValidator
 
 # from taggit.managers import TaggableManager
 from tagging.fields import TagField
 from tagging_autocomplete.models import TagAutocompleteField
-
 
 @python_2_unicode_compatible
 class User(AbstractUser):
