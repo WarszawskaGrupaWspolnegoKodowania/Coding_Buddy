@@ -17,6 +17,10 @@ from tagging_autocomplete.models import TagAutocompleteField
 from tagging.fields import TagField
 from tagging_autocomplete.models import TagAutocompleteField
 
+# from taggit.managers import TaggableManager
+from tagging.fields import TagField
+from tagging_autocomplete.models import TagAutocompleteField
+
 
 @python_2_unicode_compatible
 class User(AbstractUser):
