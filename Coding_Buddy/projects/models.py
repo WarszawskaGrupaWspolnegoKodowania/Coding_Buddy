@@ -30,6 +30,3 @@ class Project(models.Model):
 
 	def __str__(self):
         	return self.name
-
-	def get_absolute_url(self):
-		return reverse('projects:detail', kwargs={'name': self.name})
