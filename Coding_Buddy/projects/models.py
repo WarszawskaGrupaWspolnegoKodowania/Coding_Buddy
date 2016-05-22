@@ -16,7 +16,7 @@ class Project(models.Model):
 
 	expiration_date = models.DateField()
 
-	number_of_users_required = models.IntegerField()
+	number_of_users_required = models.PositiveSmallIntegerField()
 	
 	opensource = models.BooleanField()
 
