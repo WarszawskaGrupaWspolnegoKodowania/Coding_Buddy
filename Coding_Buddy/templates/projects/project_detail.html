@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h2>Project name: {{ object.name }}</h2>
+  <p>{{ object.description }} </p>
+  <p>Number of users required: {{ object.number_of_users_required }}</p>
+  <p>Expiration date: {{ object.expiration_date }}</p>
+  <p>Opensource:
+  {% if object.opensource %}
+    yes
+  {% else %}
+    no
+  {% endif %}
+  </p>
+  <p>URL: <a href={{ object.url }}>{{ object.url }}</a></p>
+</div>
+
+<p><a href = "{% url 'projects:update' object.slug %}">Update the project</a></p>
+<p><a href = "{% url 'projects:delete' object.slug %}">Delete the project</a></p>
+
+{% endblock content %}

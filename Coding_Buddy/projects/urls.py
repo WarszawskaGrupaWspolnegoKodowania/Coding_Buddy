@@ -6,31 +6,34 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    # URL pattern for the UserListView
+
     url(
         regex=r'^$',
         view=views.ProjectListView.as_view(),
         name='list'
     ),
 
-    # URL pattern for the UserRedirectView
-#    url(
-#        regex=r'^~redirect/$',
-#        view=views.UserRedirectView.as_view(),
-#        name='redirect'
-#    ),
+    url(
+        regex=r'^new/$',
+        view=views.ProjectCreateView.as_view(),
+        name='create'
+    ),
 
-    # URL pattern for the UserDetailView
-#    url(
-#        regex=r'^(?P<username>[\w.@+-]+)/$',
-#        view=views.UserDetailView.as_view(),
-#        name='detail'
-#    ),
+    url(
+	regex=r'^(?P<slug>[-\w]+)/$',
+        view=views.ProjectDetailView.as_view(),
+        name='detail'
+    ),
 
-    # URL pattern for the UserUpdateView
-#    url(
-#        regex=r'^~update/$',
-#        view=views.UserUpdateView.as_view(),
-#        name='update'
-#    ),
+    url(
+        regex=r'^(?P<slug>[-\w]+)/update/$',
+        view=views.ProjectUpdateView.as_view(),
+        name='update'
+    ),
+
+    url(
+        regex=r'^(?P<slug>[-\w]+)/delete/$',
+        view=views.ProjectDeleteView.as_view(),
+        name='delete'
+    ),
 ]

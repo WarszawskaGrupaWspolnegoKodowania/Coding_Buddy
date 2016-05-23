@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	{% if object %}
+		Edit project
+	{% else %}
+		New project
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+
+	{% if object %}
+		<h2>Edit {{ project.name }}</h2>
+	{% else %}
+		<h2>New</h2>
+	{% endif %}
+
+<form action="" method="post">{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value={% if object %}"Save"{% else %}"Create"{% endif %}/>
+</form>
+	
+{% endblock %}
